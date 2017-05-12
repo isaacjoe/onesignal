@@ -1,0 +1,195 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "officenow",
+    "version": "v0.0.0"
+  },
+  "host": "onesignal.com",
+  "schemes": [
+    "https"
+  ],
+  "basePath": "/api/v1",
+  "paths": {
+    "https://onesignal.com/api/v1/notifications": {
+      "POST": {
+        "summary": "推播：針對全客戶端推播",
+        "description": "",
+        "operationId": "b1e74f4a-4398-4d49-8d27-5e448a25cbcf",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "{\"app_id\":\"03405dd3-cec9-449e-9f88-76cb63373168\",\"included_segments\":\"All\",\"contents\":{\"en\":\"\\u8acb\\u5728\\u6b64\\u8f38\\u5165\\u63a8\\u64ad\\u5167\\u5bb9\"}}"
+            },
+            "in": "body",
+            "name": "body"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "no response description was provided for this operation"
+          }
+        },
+        "security": [
+          {
+            "basic_auth": []
+          }
+        ]
+      },
+      "GET": {
+        "summary": "查詢：取得所有推播紀錄",
+        "description": "",
+        "operationId": "75668b0f-4b26-4adc-9c0c-be8fd03b7575",
+        "parameters": [
+          {
+            "type": "string",
+            "default": "03405dd3-cec9-449e-9f88-76cb63373168",
+            "name": "app_id",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": ""
+            },
+            "in": "body",
+            "name": "body"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "no response description was provided for this operation"
+          }
+        },
+        "security": [
+          {
+            "basic_auth": []
+          }
+        ]
+      }
+    },
+    "https://onesignal.com/api/v1/players": {
+      "GET": {
+        "summary": "查詢：所有行動裝置",
+        "description": "",
+        "operationId": "011fc0ae-bdcd-4407-81f6-ad5dfd93a0a2",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "type": "string",
+            "default": "300",
+            "name": "limit",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "default": "03405dd3-cec9-449e-9f88-76cb63373168",
+            "name": "app_id",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "default": "0",
+            "name": "offset",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "{\"app_id\":\"03405dd3-cec9-449e-9f88-76cb63373168\"}"
+            },
+            "in": "body",
+            "name": "body"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "no response description was provided for this operation"
+          }
+        },
+        "security": [
+          {
+            "basic_auth": []
+          }
+        ]
+      }
+    },
+    "https://onesignal.com/api/v1/players/csv_export": {
+      "POST": {
+        "summary": "查詢：將用戶資料輸出為CSV",
+        "description": "",
+        "operationId": "2f66aa9a-c6eb-4eec-86ef-3ee61ccd9cf9",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "type": "string",
+            "default": "03405dd3-cec9-449e-9f88-76cb63373168",
+            "name": "app_id",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "{\"app_id\":\"03405dd3-cec9-449e-9f88-76cb63373168\"}"
+            },
+            "in": "body",
+            "name": "body"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "no response description was provided for this operation"
+          }
+        },
+        "security": [
+          {
+            "basic_auth": []
+          }
+        ]
+      }
+    },
+    "https://onesignal.com/api/v1/apps/03405dd3-cec9-449e-9f88-76cb63373168": {
+      "GET": {
+        "summary": "查詢：api全額統計查詢",
+        "description": "",
+        "operationId": "f64f2937-dccd-48d4-956f-82eac87e4dd1",
+        "consumes": [
+          "application/json"
+        ],
+        "responses": {
+          "default": {
+            "description": "no response description was provided for this operation"
+          }
+        },
+        "security": [
+          {
+            "basic_auth": []
+          }
+        ],
+        "parameters": []
+      }
+    }
+  },
+  "securityDefinitions": {
+    "basic_auth": {
+      "type": "basic"
+    }
+  },
+  "tags": []
+}
